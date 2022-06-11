@@ -1,0 +1,52 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    .logo-menu{
+        margin-left: 20px;
+        display: flex;
+        align-items: center;
+        i{
+            margin-right: 15px;
+            padding: 10px 11px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        i:hover{
+            background-color: #eee;
+            border-radius: 50%;
+        }
+        img{
+            width: 110px;
+        }
+    }
+    .search-bar{
+        display: flex;
+        align-items: center;
+        width: 50%;
+        background-color: #eee;
+        border-radius: 10px;
+        justify-content: space-around;
+        padding: 8px 10px;
+        input{
+            outline: none;
+            border: none;
+            width: 100%;
+            padding: 8px;
+            background-color: #eee;
+        }
+    }
+    .settings-icon{
+        padding-top: 0px;
+        font-size: 1.2em;
+        i{
+            margin-right: 10px;
+            padding:10px 10px ;
+            cursor: pointer;
+
+        }
+        i:hover{
+            background-color: #eee;
+            border-radius: 50%;
+        }
+    }
+}
