@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { InboxRoutingModule } from './inbox-routing.module';
 import { MailComponent } from './mail/mail.component';
+import { SharedModule } from '../common/shared/shared.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { MailComponent } from './mail/mail.component';
   ],
   imports: [
     CommonModule,
-    InboxRoutingModule
+    InboxRoutingModule,
+    SharedModule
   ]
 })
 export class InboxModule { }

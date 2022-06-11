@@ -1,0 +1,117 @@
+.side-bar{
+    width: 250px;
+    background-color: #fff;
+   
+    height: 100%;
+    .compose-mail{
+        display: flex;
+        align-items: center;
+        border: 1.2px solid #eee;
+        border-radius: 30px;
+        width: 150px;
+        background-color:#fff ;
+        padding-left: 12px;
+        margin-left: 10px;
+        margin-top:15px ;
+        box-shadow: 0 0 4px 0 rgb(0 0 0/25%);
+        cursor: pointer;
+        i{
+            font-size: 3em;
+            color: rgb(206, 130, 8);
+        }
+        span{
+            margin-left: 15px;
+        }
+    }
+    .compose-mail:hover{
+        box-shadow: 0 0 8px 0 rgb(0 0 0/25%);
+
+    }
+    .nav-links{
+        margin-top: 20px;
+        height: 180px;
+        overflow:hidden;
+        padding-bottom: 5px;
+        border-bottom: 1.2px solid #ccc;
+        ul{
+            margin: 0px;
+            padding: 0;
+            list-style: none;
+            .active{
+                background-color: #f5c6cb;
+            }
+           
+            li{
+                cursor: pointer;
+                margin-right: 10px;
+                padding: 8px 30px;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                a{
+                    text-decoration: none;
+                    color: black;
+                   
+                    i{
+                        font-size: 1.1em;
+                        margin-right: 26px;
+                        color: rgba(86, 75, 75, 0.8);
+                    }
+                }
+                // .active{
+                //     color: rgb(197, 6, 6);
+                   
+                // }
+                
+            }
+            li:hover{
+                background-color: #eee;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+            }
+        }
+
+    }
+    .nav-links:hover{
+        overflow-y: scroll;
+    }
+    .meetings{ 
+        margin-top: 10px;
+        b{
+            padding: 20px;
+            
+        }
+        ul{
+            margin: 0px;
+            padding: 0;
+            list-style: none;
+            .active{
+                background-color: #ccc;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+            }
+            li{
+                cursor: pointer;
+                padding: 8px 30px;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                a{
+                    text-decoration: none;
+                    color: black;
+                   
+                    i{
+                        font-size: 1.1em;
+                        margin-right: 26px;
+                        color: rgba(86, 75, 75, 0.8);
+                    }
+                }
+                
+            }
+            li:hover{
+                background-color: #eee;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+            }
+        }
+
+    }
+}

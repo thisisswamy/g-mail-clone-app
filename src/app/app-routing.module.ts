@@ -1,9 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path:'',
+    loadChildren:()=>import('./inbox/inbox.module').then(m=>m.InboxModule)
+  }
+];
 
 @NgModule({
+ 
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
