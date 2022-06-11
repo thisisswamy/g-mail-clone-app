@@ -10,9 +10,10 @@ header{
         align-items: center;
         i{
             margin-right: 15px;
-            padding: 10px 11px;
+            padding: 12px 13px;
             font-size: 1.2em;
             cursor: pointer;
+            color: rgba(86, 75, 75, 0.8);
         }
         i:hover{
             background-color: #eee;
@@ -32,13 +33,13 @@ header{
         padding: 8px 10px;
         i{
             font-size: 1.2em;
-            padding: 8px;
+            padding: 12px 13px;
             border-radius: 50%;
             cursor: pointer;
+            color: rgba(86, 75, 75, 0.8);
         }
         i:hover{
             background-color: #ccc;
-
         }
         input{
             outline: none;
@@ -53,9 +54,9 @@ header{
         font-size: 1.2em;
         i{
             margin-right: 10px;
-            padding:10px 10px ;
+            padding: 12px 13px;
             cursor: pointer;
-
+            color: rgba(86, 75, 75, 0.8);
         }
         i:hover{
             background-color: #eee;

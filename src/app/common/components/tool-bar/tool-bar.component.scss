@@ -1,0 +1,44 @@
+.tool-bar{
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    border-bottom: 1.2px solid #ccc;
+    padding-bottom: 5px;
+    .check-box{
+        display: flex;
+        align-items: center;
+        padding: 3px;
+        border-radius: 8px;
+        margin-right: 8px;
+        input{
+            zoom: 1.5;
+        }
+        i{
+            color: rgba(86, 75, 75, 0.8);
+            cursor: pointer;
+        }
+
+    }
+    .checked{
+        border: 1.2px solid #cccc;
+        background-color: #eee;
+    }
+    .tools{
+        i{
+            font-size: 1.2em;
+            margin-right: 8px;
+            cursor: pointer;
+            color: rgba(86, 75, 75, 0.8);
+           
+            padding: 12px 13px;
+            border-radius: 50%;
+        }
+        i:hover{
+            background-color: #eee;
+        }
+        .fa-ellipsis-vertical{
+            padding: 11px 18px;
+        }
+
+    }
+}
