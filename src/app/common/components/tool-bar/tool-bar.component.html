@@ -1,7 +1,7 @@
 <div class="tool-bar">
     <div class="check-box" [ngClass]="isChecked ? 'checked':''">
         <input type="checkbox" (input)="checked()">
-        <i class="fa-solid fa-caret-down"></i>
+        <i class="fa-solid fa-caret-down" (click)="getReadOptions()"></i>
     </div>
     <div class="tools">
         <i class="fa-solid fa-arrow-rotate-right"></i>
@@ -12,6 +12,20 @@
         <i *ngIf="isChecked" class="fa-solid fa-clock"></i>
         <i *ngIf="isChecked" class="fa-solid fa-circle-check"></i>
         <i *ngIf="isChecked" class="fa-solid fa-tag"></i>
-        <i class="fa-solid fa-ellipsis-vertical"></i>
+        <i class="fa-solid fa-ellipsis-vertical" (click)="getMarkAsReadOptions()"></i>
     </div>
+</div>
+
+<div class="check-menu" *ngIf="hasReadOptions">
+    <ul>
+        <li *ngFor="let option of readOptionsList" (click)="selectReadOption(option)">{{option}}</li>
+        
+    </ul>
+</div>
+
+<div [ngClass]="isChecked ? 'read-all-1':'read-all'" *ngIf="hasMarkAsReadOptions">
+    <ul>
+        <li *ngFor="let readOption of markAsReadOptionsList" (click)="selectMarkAsReadOption(readOption)" >{{readOption}}</li>
+       
+    </ul>
 </div>
