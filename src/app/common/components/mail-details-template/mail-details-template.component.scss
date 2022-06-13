@@ -1,0 +1,115 @@
+.mail{
+    height: 420px;
+    overflow-y: scroll;
+    .mail-details{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .logo-options{
+            .logo{
+                display: flex;
+                align-items: center;
+                .fa-user{
+                    border: 1.2px solid #ccc;
+                    padding: 15px;
+                    border-radius: 50%;
+                    margin-right: 8px;
+                    font-size: 1.2em;
+                }
+                .des{
+                    
+                    small{
+                        color: rgba(86, 75, 75, 0.8);
+                        i{
+                            color: rgba(86, 75, 75, 0.8);
+                            font-size: 1.2em;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            
+            }
+        }
+        .options{
+            display: flex;
+            align-items: center;
+            small, i{
+                color:rgba(86, 75, 75, 0.8);
+                margin-right: 1rem;
+            }
+            .fa-solid.fa-star{
+                color: rgb(210, 210, 7);
+            }
+            
+            i{
+                cursor: pointer;
+                font-size: 1.2em;
+                padding: 12px;
+                border-radius: 50%;
+            }
+            i:hover{
+                background-color: #f1f3f4;
+            }
+            .fa-ellipsis-vertical{
+                padding: 11px 18px;
+    
+            }
+            
+        }
+    }
+    
+    .more-options{
+        position: relative;
+        ul{
+            position: absolute;
+            background-color: #ffff;
+            box-shadow: 0 0 10px 0 rgb(0 0 0/25%);
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            right: 20px;
+            li{
+                padding: 10px 55px;
+                cursor: pointer;
+                i{
+                    font-size: 1.2em;
+                    margin-right: 1em;
+                }
+            }
+            .li{
+                padding: 10px 55px;
+                text-align: center;
+    
+            }
+            li:hover{
+                background-color: #f1f3f4
+    
+            }
+        }
+    }
+    .mail-body{
+        pre{
+            font-family: roboto;
+            font-size: .9em;
+        }
+    }
+    .buttons{
+        margin-left: 1.5em;
+        button{
+            outline: none;
+            border: 1.2px solid #ccc;
+            background-color: #fff;
+            padding:6px 20px;
+            margin-left: 1.5em;
+            cursor: pointer;
+            font-size: .9em;
+            border-radius: 5px;
+            i{
+                margin: 5px;
+            }
+        }
+        button:hover{
+            background-color: #f1f3f4;
+        }
+    }
+}

@@ -1,1 +1,22 @@
-<p>mail-template works!</p>
+<div class="mail-card" >
+    <div class="check-star">
+        <input type="checkbox" >
+        <i *ngIf="!isStarred" class="fa-regular fa-star" (click)="starredMsg()"></i>
+        <i *ngIf="isStarred" class="fa-solid fa-star" (click)="starredMsg()"></i>
+    </div>
+    <div class="sender-name" (click)="gotoMail()" >
+        <div class="sender">
+            <small>Ram Sender</small>
+        </div>
+        <div class="sub">
+            <small>This is subject</small>
+        </div>
+        <div class="date">
+            <!-- <i *ngIf="!isMouseHover" class="fa-solid fa-square-caret-down"></i>
+            <i *ngIf="!isMouseHover"  class="fa-solid fa-trash"></i>
+            <i *ngIf="!isMouseHover"  class="fa-solid fa-envelope-open"></i>
+            <i *ngIf="!isMouseHover"  class="fa-solid fa-clock"></i> -->
+            <small>jan 10</small>
+        </div>
+    </div>
+</div>

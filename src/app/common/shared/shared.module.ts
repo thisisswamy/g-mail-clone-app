@@ -5,6 +5,7 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { ToolBarComponent } from '../components/tool-bar/tool-bar.component';
 import { MailDetailsTemplateComponent } from '../components/mail-details-template/mail-details-template.component';
 import { MailTemplateComponent } from '../components/mail-template/mail-template.component';
+import { LabelsBarComponent } from '../components/labels-bar/labels-bar.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { MailTemplateComponent } from '../components/mail-template/mail-template
     ToolBarComponent,
     MailTemplateComponent,
     MailDetailsTemplateComponent,
+    LabelsBarComponent
   ],
   imports: [
     CommonModule,
@@ -21,6 +23,7 @@ import { MailTemplateComponent } from '../components/mail-template/mail-template
     ToolBarComponent,
     MailTemplateComponent,
     MailDetailsTemplateComponent,
+    LabelsBarComponent
   ]
 })
 export class SharedModule { }

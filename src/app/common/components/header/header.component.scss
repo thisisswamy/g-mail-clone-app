@@ -26,11 +26,11 @@ header{
     .search-bar{
         display: flex;
         align-items: center;
-        width: 50%;
-        background-color: #eee;
+        width: 55%;
+        background-color: #f1f3f4;;
         border-radius: 10px;
         justify-content: space-around;
-        padding: 8px 10px;
+        padding: 2px 10px;
         i{
             font-size: 1.2em;
             padding: 12px 13px;
@@ -46,7 +46,7 @@ header{
             border: none;
             width: 100%;
             padding: 8px;
-            background-color: #eee;
+            background-color: #f1f3f4;;
         }
     }
     .settings-icon{
@@ -59,7 +59,7 @@ header{
             color: rgba(86, 75, 75, 0.8);
         }
         i:hover{
-            background-color: #eee;
+            background-color: #f1f3f4;
             border-radius: 50%;
         }
     }

@@ -1,17 +1,18 @@
 <div class="tool-bar">
-    <div class="check-box" [ngClass]="isChecked ? 'checked':''">
+    <div *ngIf="!isEnableCheckBox" class="check-box" [ngClass]="isChecked ? 'checked':''">
         <input type="checkbox" (input)="checked()">
         <i class="fa-solid fa-caret-down" (click)="getReadOptions()"></i>
     </div>
     <div class="tools">
-        <i class="fa-solid fa-arrow-rotate-right"></i>
-        <i *ngIf="isChecked" class="fa-solid fa-square-caret-down"></i>
-        <i *ngIf="isChecked" class="fa-solid fa-circle-exclamation"></i>
-        <i *ngIf="isChecked" class="fa-solid fa-trash"></i>
-        <i *ngIf="isChecked" class="fa-solid fa-envelope-open"></i>
-        <i *ngIf="isChecked" class="fa-solid fa-clock"></i>
-        <i *ngIf="isChecked" class="fa-solid fa-circle-check"></i>
-        <i *ngIf="isChecked" class="fa-solid fa-tag"></i>
+        <i *ngIf="isEnableCheckBox" class="fa-solid fa-arrow-left" (click)="goBack()"></i>
+        <i *ngIf="!isEnableCheckBox" class="fa-solid fa-arrow-rotate-right"></i>
+        <i *ngIf="isChecked || isEnableCheckBox" class="fa-solid fa-square-caret-down"></i>
+        <i *ngIf="isChecked || isEnableCheckBox" class="fa-solid fa-circle-exclamation"></i>
+        <i *ngIf="isChecked || isEnableCheckBox" class="fa-solid fa-trash"></i>
+        <i *ngIf="isChecked || isEnableCheckBox" class="fa-solid fa-envelope-open"></i>
+        <i *ngIf="isChecked || isEnableCheckBox" class="fa-solid fa-clock"></i>
+        <i *ngIf="isChecked || isEnableCheckBox" class="fa-solid fa-circle-check"></i>
+        <i *ngIf="isChecked || isEnableCheckBox" class="fa-solid fa-tag"></i>
         <i class="fa-solid fa-ellipsis-vertical" (click)="getMarkAsReadOptions()"></i>
     </div>
 </div>
@@ -23,7 +24,7 @@
     </ul>
 </div>
 
-<div [ngClass]="isChecked ? 'read-all-1':'read-all'" *ngIf="hasMarkAsReadOptions">
+<div [ngClass]="isChecked || isEnableCheckBox ? 'read-all-1':'read-all'" *ngIf="hasMarkAsReadOptions">
     <ul>
         <li *ngFor="let readOption of markAsReadOptionsList" (click)="selectMarkAsReadOption(readOption)" >{{readOption}}</li>
        

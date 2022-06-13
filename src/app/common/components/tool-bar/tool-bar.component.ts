@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataConstants } from '../../service/data-constants';
+import { DataService } from '../../service/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tool-bar',
@@ -11,11 +13,20 @@ export class ToolBarComponent implements OnInit {
   isChecked!:boolean;
   hasReadOptions!:boolean;
   hasMarkAsReadOptions!:boolean;
+  isEnableCheckBox!:boolean;
   readOptionsList:string[]=DataConstants.readOptionsList;
   markAsReadOptionsList:string[]=DataConstants.markAsReadOptionsList;
-  constructor() { }
+  constructor(
+    private readonly dataService:DataService,
+    private readonly router:Router
+    
+    
+    ) { }
 
   ngOnInit(): void {
+    this.dataService.enableCheckBox.subscribe(data=>{
+      this.isEnableCheckBox=data;
+    })
   }
   checked(){
     if(this.isChecked){
@@ -56,6 +67,10 @@ export class ToolBarComponent implements OnInit {
     this.hasMarkAsReadOptions=false;
     
 
+  }
+  goBack(){
+    this.dataService.enableCheckBox.next(false);
+    this.router.navigate(['inbox'])
   }
 
 }
