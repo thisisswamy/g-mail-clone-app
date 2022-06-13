@@ -1,0 +1,42 @@
+.labels-bar{
+    display: flex;
+    // margin-bottom: 4rem;
+    .label{
+        margin-right: .2rem;
+        height: 40px;
+        width: 200px;
+        display: flex;
+        align-items: center;
+        padding: 10px 10px;
+        cursor: pointer;
+        
+        i{
+            margin-right: 1em;
+        }
+        label{
+            display: flex;
+            flex-wrap: wrap;
+            small{
+                border: 1.2px solid red;
+                border-radius: 8px;
+                background-color: red;
+                color: #fff;
+                margin-left: 4px;
+                font-size: .8em;
+                padding: 0 2px;
+                height: 14px;
+                
+
+            }
+        }
+    }
+    .label:hover{
+        background-color: #f1f3f4;
+        color: red;
+        border-bottom: 2px solid red;
+    }
+    .active{
+        color: red;
+        border-bottom: 2px solid red;
+    }
+}

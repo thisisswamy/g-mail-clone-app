@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DataConstants } from '../../service/data-constants';
+import { DataService } from '../../service/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tool-bar',
@@ -8,9 +11,22 @@ import { Component, OnInit } from '@angular/core';
 export class ToolBarComponent implements OnInit {
 
   isChecked!:boolean;
-  constructor() { }
+  hasReadOptions!:boolean;
+  hasMarkAsReadOptions!:boolean;
+  isEnableCheckBox!:boolean;
+  readOptionsList:string[]=DataConstants.readOptionsList;
+  markAsReadOptionsList:string[]=DataConstants.markAsReadOptionsList;
+  constructor(
+    private readonly dataService:DataService,
+    private readonly router:Router
+    
+    
+    ) { }
 
   ngOnInit(): void {
+    this.dataService.enableCheckBox.subscribe(data=>{
+      this.isEnableCheckBox=data;
+    })
   }
   checked(){
     if(this.isChecked){
@@ -20,4 +36,41 @@ export class ToolBarComponent implements OnInit {
       this.isChecked=true;
     }
   }
+  getReadOptions(){
+    if(this.hasReadOptions){
+      this.hasReadOptions=false;
+    }
+    else{
+      this.hasReadOptions=true
+      this.hasMarkAsReadOptions=false
+
+    }
+
+  }
+  selectReadOption(option:string){
+    console.log(option);
+    this.hasReadOptions=false;
+    
+  }
+  getMarkAsReadOptions(){
+    if(this.hasMarkAsReadOptions){
+      this.hasMarkAsReadOptions=false
+    }
+    else{
+      this.hasMarkAsReadOptions=true;
+      this.hasReadOptions=false;
+
+    }
+  }
+  selectMarkAsReadOption(readOption:string){
+    console.log(readOption);
+    this.hasMarkAsReadOptions=false;
+    
+
+  }
+  goBack(){
+    this.dataService.enableCheckBox.next(false);
+    this.router.navigate(['inbox'])
+  }
+
 }

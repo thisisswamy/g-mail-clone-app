@@ -1,0 +1,53 @@
+<div class="mail">
+    <header>
+        <h1>this is mail heading....</h1>
+    </header>
+    <div class="mail-details"> 
+        <div class="logo-options">
+            <div class="logo">
+                <i class="fa-solid fa-user"></i>
+                <div class="des">
+                    <label>Sender < sender@gmail.com > </label><br>
+                    <small>to me <i class="fa-solid fa-caret-down"></i></small>
+                </div>
+            </div>
+        </div> 
+        <div class="options">
+            <small>10:23 PM(1 min ago )</small>
+            <i *ngIf="isStarred" class="fa-solid fa-star" (click)="starredMethod()" ></i>
+            <i *ngIf="!isStarred" class="fa-regular fa-star" (click)="starredMethod()" ></i>
+            <i class="fa-solid fa-reply" title="reply"></i>  
+            <i class="fa-solid fa-ellipsis-vertical" (click)="getMoreOptions()"></i>  
+        </div> 
+    </div>
+    
+    <div class="more-options" *ngIf="isMoreOptionsClicked">
+        <ul> 
+            <li> 
+            <i class="fa-solid fa-reply"></i>Reply </li>
+            <li>
+                <i class="fa-solid fa-share"></i>Forward</li>
+            <li class="li">Filter</li>
+            <li class="li">Report Spam</li>
+            <li class="li">Report Phishing</li>
+            <li class="li">Translate mail</li>
+            <li class="li">Download mail</li>
+        </ul>
+    </div>
+    
+    <div class="mail-body">
+        <pre>
+            Dear Sir 
+    
+            I am writing this mail to know about this evening
+    
+    
+            Sincerely,
+            Swamy Thudum
+        </pre>
+    </div>
+    <div class="buttons">
+        <button> <i class="fa-solid fa-reply" title="reply"></i> Reply</button>
+        <button> <i class="fa-solid fa-share"> </i>Forward</button>
+    </div>
+</div>

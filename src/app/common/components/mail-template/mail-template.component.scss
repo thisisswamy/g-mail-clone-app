@@ -1,0 +1,64 @@
+.mail-card{
+    display: flex;
+    align-items: center;
+    border: 1.2px solid #eee;
+    padding: 8px;
+    margin: 0;
+    .check-star{
+        display: flex;
+        align-items: center;
+        input{
+            zoom: 1.3;
+        }
+        i{
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 50%;
+        }
+        i:hover{
+            background-color: #f1f3f4;
+
+        }
+        .fa-solid{
+            color: rgb(230, 230, 4)
+            
+        }
+    }
+    .sender-name{
+        cursor: pointer;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 20px;
+        
+        .sub{
+            width: 60%;
+        }
+        .sender, .sub, .date{
+            small{
+                font-size: .9em;
+            }
+        }
+        .date{
+            // width: 25%;
+            
+            i{
+                margin-right: 10px;
+                padding: 7px;
+                border-radius: 50%;
+            }
+            i:hover{
+                background-color: #eee;
+
+            }
+        }
+        
+        
+    }
+}
+.mail-card:hover{
+    box-shadow: 0 0 6px 0 rgb(0 0 0/25%);
+
+}
