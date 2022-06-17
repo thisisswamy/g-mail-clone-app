@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/common/service/data.service';
 
 @Component({
   selector: 'app-mail-details',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MailDetailsComponent implements OnInit {
 
-  constructor() { }
+  isComposedMailOpened!:boolean;
+  constructor(private readonly dataService:DataService) { }
 
   ngOnInit(): void {
+    this.dataService.isOpenComposeMail.subscribe(data=>{
+      this.isComposedMailOpened=data;
+      console.log(this.isComposedMailOpened);
+      
+    })
   }
 
 }

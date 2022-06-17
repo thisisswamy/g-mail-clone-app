@@ -1,0 +1,40 @@
+<div class="compose-mail">
+    <div class="write-mail">
+        <div class="header">
+            <p>New Message</p>
+            <div class="icons">
+                <i class="fa-solid fa-minus" (click)="shutterDown()"></i>
+                <i class="fa-solid fa-down-left-and-up-right-to-center" *ngIf="isMinimised" (click)="getMinimiseWindow()" ></i>
+                <i class="fa-solid fa-up-right-and-down-left-from-center" *ngIf="!isMinimised" (click)="getMaximiseWindow()" ></i>
+                <i class="fa-solid fa-xmark" (click)="close()"></i>
+            </div>
+        </div>
+        <div class="mail-body">
+            <form >
+                <div class="form-group bcc">
+                    <input type="text" placeholder="Recipent Name">
+                    <div class="cc">
+                        <small (click)="addCc()" *ngIf="!hasCc">Cc</small>
+                        <small (click)="addBcc()" *ngIf="!hasBcc">Bcc</small>
+                    </div>
+                </div>
+                <div class="form-group"  *ngIf="hasCc">
+                    <input type="text" placeholder="Enter Cc">
+                </div>
+                <div class="form-group" *ngIf="hasBcc">
+                    <input type="text" placeholder="Enter Bcc">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Subject">
+                </div>
+               
+                <div class="mail-des">
+                    <textarea placeholder="Enter mail" cols="10" rows="8"></textarea>
+                </div>
+                <div class="buttons">
+                    <button>Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

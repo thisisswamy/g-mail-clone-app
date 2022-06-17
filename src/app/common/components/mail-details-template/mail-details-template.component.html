@@ -16,17 +16,17 @@
             <small>10:23 PM(1 min ago )</small>
             <i *ngIf="isStarred" class="fa-solid fa-star" (click)="starredMethod()" ></i>
             <i *ngIf="!isStarred" class="fa-regular fa-star" (click)="starredMethod()" ></i>
-            <i class="fa-solid fa-reply" title="reply"></i>  
+            <i class="fa-solid fa-reply" title="reply" (click)="reply()"></i>  
             <i class="fa-solid fa-ellipsis-vertical" (click)="getMoreOptions()"></i>  
         </div> 
     </div>
     
     <div class="more-options" *ngIf="isMoreOptionsClicked">
         <ul> 
-            <li> 
-            <i class="fa-solid fa-reply"></i>Reply </li>
-            <li>
-                <i class="fa-solid fa-share"></i>Forward</li>
+            <li (click)="reply()"> 
+            <i class="fa-solid fa-reply" ></i>Reply </li>
+            <li (click)="forward()">
+                <i class="fa-solid fa-share" ></i>Forward</li>
             <li class="li">Filter</li>
             <li class="li">Report Spam</li>
             <li class="li">Report Phishing</li>
@@ -47,7 +47,7 @@
         </pre>
     </div>
     <div class="buttons">
-        <button> <i class="fa-solid fa-reply" title="reply"></i> Reply</button>
-        <button> <i class="fa-solid fa-share"> </i>Forward</button>
+        <button (click)="reply()"> <i class="fa-solid fa-reply" title="reply" ></i> Reply</button>
+        <button (click)="forward()"> <i class="fa-solid fa-share" > </i>Forward</button>
     </div>
 </div>

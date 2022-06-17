@@ -6,6 +6,7 @@ import { ToolBarComponent } from '../components/tool-bar/tool-bar.component';
 import { MailDetailsTemplateComponent } from '../components/mail-details-template/mail-details-template.component';
 import { MailTemplateComponent } from '../components/mail-template/mail-template.component';
 import { LabelsBarComponent } from '../components/labels-bar/labels-bar.component';
+import { ComposeMailComponent } from '../components/compose-mail/compose-mail.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { LabelsBarComponent } from '../components/labels-bar/labels-bar.componen
     ToolBarComponent,
     MailTemplateComponent,
     MailDetailsTemplateComponent,
-    LabelsBarComponent
+    LabelsBarComponent,
+    ComposeMailComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { LabelsBarComponent } from '../components/labels-bar/labels-bar.componen
     ToolBarComponent,
     MailTemplateComponent,
     MailDetailsTemplateComponent,
-    LabelsBarComponent
+    LabelsBarComponent,
+    ComposeMailComponent
   ]
 })
 export class SharedModule { }
