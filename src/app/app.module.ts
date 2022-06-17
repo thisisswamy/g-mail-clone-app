@@ -5,12 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './common/components/header/header.component';
 import { MenuComponent } from './common/components/menu/menu.component';
+import { ComposeMailComponent } from './common/components/compose-mail/compose-mail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    MenuComponent
+    MenuComponent,
+   
+    
     
   ],
   imports: [

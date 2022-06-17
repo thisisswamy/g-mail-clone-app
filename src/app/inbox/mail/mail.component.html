@@ -1,4 +1,13 @@
 <app-tool-bar></app-tool-bar>
+
+<div *ngIf="isComposeMailOpened">
+    <div [ngClass]="isMinimise ? 'compose-mail-max':'compose-mail-min'">
+        <div class="popup">
+         <app-compose-mail></app-compose-mail>
+        </div>
+     </div>
+</div>
+
 <div class="mails">
     <app-labels-bar></app-labels-bar>
     <app-mail-template></app-mail-template>

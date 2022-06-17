@@ -6,5 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class DataService {
   enableCheckBox=new BehaviorSubject<boolean>(false);
+  isMinimised=new BehaviorSubject<boolean>(false);
+  isOpenComposeMail=new BehaviorSubject<boolean>(false);
   constructor() { }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/common/service/data.service';
 
 @Component({
   selector: 'app-mail',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MailComponent implements OnInit {
 
-  constructor() { }
+  isMinimise!:boolean;
+  isComposeMailOpened!:boolean;
+  constructor(private readonly dataService:DataService) { }
 
   ngOnInit(): void {
+    this.dataService.isMinimised.subscribe(data=>{
+      this.isMinimise=data;
+    })
+    this.dataService.isOpenComposeMail.subscribe(data=>{
+      this.isComposeMailOpened=data
+    })
+
   }
 
 }
