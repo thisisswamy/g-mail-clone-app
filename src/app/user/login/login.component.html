@@ -1,1 +1,28 @@
-<p>login works!</p>
+<div class="wrapper row">
+    <div class="logo col-md-6">
+        <h1> Welcome to messaging app</h1>
+        <p>This is very finest app that you 
+            ever come across, what are you waiting for just Signin/Signup and <b class="text-danger">Rest is History...</b></p>
+        <small>Don't have account yet ?</small><br>
+        <button>Create Account</button>
+    </div>
+    <div class="login-form col-md-5">
+        <h2>Login</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label>Username</label><br>
+                <input type="text" placeholder="Enter username" formControlName="username">
+            </div>
+            <div class="form-group">
+                <label>Password</label><br>
+                <input type="text" placeholder="Enter username" formControlName="password">
+            </div>
+            <div class="forgot">
+                <a href="">forgot password ?</a>
+            </div>
+            <div class="buttons">
+                <button>Login</button>
+            </div>
+        </form>
+    </div>
+</div>
