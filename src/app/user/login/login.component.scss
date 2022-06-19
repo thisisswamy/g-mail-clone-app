@@ -1,0 +1,83 @@
+.wrapper{
+    margin: 2rem;
+    gap: 50px;
+    background-color: #002D62;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 #318CE7;
+    overflow: hidden;
+
+    .logo{
+     
+        color: #fff;
+        border-radius: 10px;
+        padding: 10px;
+        button{
+            border: #fff;
+            outline: none;
+            background-color:#6CB4EE ;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: 700;
+            margin-top: 2rem;
+        }
+        button:hover{
+            background-color: #002244 ;
+            color: #fff;
+            font-weight: 700;
+            border: 1px solid #fff;
+        }
+    }
+    .login-form{
+        border: 1.2px solid #fff;
+        border-radius: 5px;
+        padding: 20px;
+        background-color: #fff;
+        h2{
+            border-bottom: 2px solid darkblue;
+            font-weight: 700;
+        }
+        form{
+            .form-group{
+                margin-top: 10px;
+                input{
+                    width: 100%;
+                    border: 1.2px solid #ccc;
+                    padding: 10px;
+                    outline: none;
+                    margin-top: 5px;
+                    border-radius: 8px;
+                }
+                input:focus{
+                    border: 1.4px solid #318CE7;
+                }
+            }
+            .forgot{
+                a{
+                    text-decoration: none;
+                    font-size: .8em;
+                }
+            }
+            .buttons{
+                margin: 1em;
+                button{
+                    outline: none;
+                    border: none;
+                    width: 100%;
+                    padding: 15px 0px;
+                    color: #fff;
+                    font-size: 1em;
+                    border-radius: 7px;
+                    font-weight: 680;
+                    letter-spacing: 2px;
+                    background-color: #0047AB;
+                }
+                button:hover{
+                    background-color:#002244 ;
+
+                }
+            }
+        }
+    }
+}

@@ -34,14 +34,12 @@ export class MailDetailsTemplateComponent implements OnInit {
         this.isMoreOptionsClicked=true
       }
   }
-  forward(){
-    this.dataService.isOpenComposeMail.next(true)
+  forward(){ 
     this.isMoreOptionsClicked=false;
 
 
   }
   reply(){
-    this.dataService.isOpenComposeMail.next(true)
     this.isMoreOptionsClicked=false;
 
 

@@ -7,15 +7,17 @@ import { DataService } from 'src/app/common/service/data.service';
   styleUrls: ['./mail-details.component.scss']
 })
 export class MailDetailsComponent implements OnInit {
-
-  isComposedMailOpened!:boolean;
+  isComposeMailOpened!:boolean;
+  isMinimise!: boolean;
   constructor(private readonly dataService:DataService) { }
 
   ngOnInit(): void {
     this.dataService.isOpenComposeMail.subscribe(data=>{
-      this.isComposedMailOpened=data;
-      console.log(this.isComposedMailOpened);
+      this.isComposeMailOpened=data;
       
+    })
+    this.dataService.isMinimised.subscribe(data=>{
+      this.isMinimise=data;
     })
   }
 
