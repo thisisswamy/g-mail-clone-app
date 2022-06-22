@@ -28,5 +28,11 @@ export class LoginComponent implements OnInit {
     }
     return false;
   }
+  createAccount(){
+    console.log('go sign up');
+    
+    this.router.navigate(['user/signup'])
+
+  }
 
 }

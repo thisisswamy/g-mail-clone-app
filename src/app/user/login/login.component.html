@@ -4,7 +4,7 @@
         <p>This is very finest app that you 
             ever come across, what are you waiting for just Signin/Signup and <b class="text-danger">Rest is History...</b></p>
         <small>Don't have account yet ?</small><br>
-        <button>Create Account</button>
+        <button (click)="createAccount()">Create Account</button>
     </div>
     <div class="login-form col-md-5">
         <h2>Login</h2>
@@ -18,7 +18,7 @@
                 <input type="text" placeholder="Enter username" formControlName="password">
             </div>
             <div class="forgot">
-                <a href="">forgot password ?</a>
+                <a routerLink="/user/forgot-password">forgot password ?</a>
             </div>
             <div class="buttons">
                 <button>Login</button>
