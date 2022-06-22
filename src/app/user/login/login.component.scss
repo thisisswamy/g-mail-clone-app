@@ -1,21 +1,28 @@
 .wrapper{
     margin: 2rem;
     gap: 50px;
-    background-color: #002D62;
+    // background-color: #002D62;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 10px 0 #318CE7;
+    // box-shadow: 0 0 10px 0 #318CE7;
     overflow: hidden;
 
+    @media(max-width:1020px){
+        background-color: #ffff;
+
+    }
+
     .logo{
-     
         color: #fff;
-        border-radius: 10px;
-        padding: 10px;
+        border-radius: 0px;
+        padding: 80px 30px;
+        background-color: #002D62;
+        box-shadow: 0 0 10px 0 #318CE7;
+
         button{
-            border: #fff;
+            border: #ffff;
             outline: none;
-            background-color:#6CB4EE ;
+            background-color:#318CE7; ;
             padding: 12px 30px;
             border-radius: 10px;
             font-size: 1em;
@@ -28,14 +35,18 @@
             font-weight: 700;
             border: 1px solid #fff;
         }
+        @media(max-width:774px){
+            display: none;
+        }
     }
     .login-form{
-        border: 1.2px solid #fff;
-        border-radius: 5px;
+        border: 1.2px solid #ffffff;
         padding: 20px;
         background-color: #fff;
+        box-shadow: 0 0 10px 0 #318CE7;
+
         h2{
-            border-bottom: 2px solid darkblue;
+            border-bottom: 5px solid darkblue;
             font-weight: 700;
         }
         form{
@@ -71,7 +82,8 @@
                     border-radius: 7px;
                     font-weight: 680;
                     letter-spacing: 2px;
-                    background-color: #0047AB;
+                    // background-color: #0047AB;
+                    background-color: #318CE7;;
                 }
                 button:hover{
                     background-color:#002244 ;

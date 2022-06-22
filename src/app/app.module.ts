@@ -13,9 +13,6 @@ import { AuthGuard } from './Authentication/auth.guard';
     AppComponent,
     HeaderComponent,
     MenuComponent,
-   
-    
-    
   ],
   imports: [
     BrowserModule,

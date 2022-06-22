@@ -3,23 +3,29 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    .container-form{
-        box-shadow: 0 0 10px 0 #318CE7;
-        padding: 20px 50px 60px 50px;
-        
+    background: url(https://img.freepik.com/free-photo/innovation-technology-business-finance-background_31965-2378.jpg?w=996) no-repeat;
+    background-size: cover;
+
+    .heading{
+        // box-shadow: 0 0 10px 0 #318CE7;
+        background-color: #ffffff;
+        padding: 10px 20px;
+        border-radius: 8px;
         p{
-            font-weight: 700;
             font-size: 2em;
+            font-weight: 700;
+            color: #002244;
             border-bottom: 4px solid #002244;
         }
         form{
             .form-group{
+                margin-top: .5em;
                 input{
+                     width: 100%;
                     outline: none;
                     border: 1.2px solid #ccc;
-                    padding:10px;
                     border-radius: 8px;
-                    width: 100%;
+                    padding: 10px;
                 }
                 input:focus{
                     border: 1.2px solid #318CE7;
@@ -27,21 +33,20 @@
             }
             .button{
                 margin-top: 1em;
+                margin-bottom: 1em;
                 button{
                     width: 100%;
-                    font-weight: 680;
-                    color: #ffff;
                     outline: none;
-                    border: none;
-                    background-color: #318CE7;;
-                    padding: 12px;
+                    border: 1.2px solid #318CE7;
+                    padding:10px ;
                     border-radius: 8px;
+                    color: #fff;
+                    background-color: #318CE7;
                 }
                 button:hover{
-                    background-color: #002244;
+                    background-color:#002244 ;
                 }
             }
         }
-
     }
 }
