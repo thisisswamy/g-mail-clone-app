@@ -9,5 +9,6 @@ export class DataService {
   isMinimised=new BehaviorSubject<boolean>(false);
   isOpenComposeMail=new BehaviorSubject<boolean>(false);
   isUserLoggedIn=new BehaviorSubject<boolean>(false);
+  isMenuOpen=new BehaviorSubject<boolean>(false);
   constructor() { }
 }

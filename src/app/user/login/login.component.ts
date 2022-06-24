@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../../common/service/data.service';
@@ -6,7 +6,7 @@ import { DataService } from '../../common/service/data.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
 
@@ -15,6 +15,11 @@ export class LoginComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    if(this.dataService.isUserLoggedIn.value){
+      this.router.navigate(['inbox'])
+      alert('please logout')
+
+    }
   }
   loginForm=this.fb.group({
     username:['',[Validators.required]],
