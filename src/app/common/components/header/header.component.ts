@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../service/data.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readonly dataService:DataService) { }
 
   ngOnInit(): void {
   }
-
+  openMenu(){
+    if(this.dataService.isMenuOpen.value){
+      this.dataService.isMenuOpen.next(false);
+    }
+    else{
+      this.dataService.isMenuOpen.next(true)
+    }
+  }
 }

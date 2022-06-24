@@ -64,3 +64,18 @@ header{
         }
     }
 }
+
+@media(max-width:1020px){
+    header{
+        .logo-menu{
+            img{
+                display: none;
+            }
+        }
+        .settings-icon{
+            i{
+                display: none;
+            }
+        }
+    }
+}

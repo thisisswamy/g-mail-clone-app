@@ -112,3 +112,13 @@
 
     }
 }
+
+@media(max-width:1020px){
+    .side-bar{
+        display: none;
+    }
+    .side-bar.active{
+        display: block;
+        position: absolute;
+    }
+}
