@@ -12,6 +12,16 @@
         <i class="fa-solid fa-circle-question"></i>
         <i class="fa-solid fa-gear"></i>
         <i class="fa-solid fa-list-check"></i>
-        <i class="fa-solid fa-user-large"></i>
+        <i class="fa-solid fa-user-large" (click)="logOut()"></i>
     </div>
 </header>
+
+<div class="logout" *ngIf="isLogoutClicked">
+    <div class="popup">
+        <p>Are you want to logout ?</p>
+        <div class="button">
+            <button class="cancel" (click)="cancelLogout()">Cancel</button>
+            <button class="ok-logout" (click)="yesLogOut()">Logout</button>
+        </div>
+    </div>
+</div>

@@ -20,6 +20,22 @@
         form{
             .form-group{
                 margin-top: .5em;
+                label::after{
+                    content: "*";
+                    color: red;
+                    padding-left: 5px;
+
+                }
+                small{
+                    color: red;
+                }
+                .invalidInputField{
+                    border: 2px solid red;
+                    background-color: #fad3d3;
+                }
+                .invalidInputField::placeholder{
+                    color: red;
+                }
                 input{
                      width: 100%;
                     outline: none;

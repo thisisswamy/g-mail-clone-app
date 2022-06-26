@@ -1,19 +1,19 @@
 <div class="mail">
     <header>
-        <h1>this is mail heading....</h1>
+        <h1>{{mailDetails.mailBody}}</h1>
     </header>
     <div class="mail-details"> 
         <div class="logo-options">
             <div class="logo">
                 <i class="fa-solid fa-user"></i>
                 <div class="des">
-                    <label>Sender < sender@gmail.com > </label><br>
+                    <label>{{mailDetails.mailTo}} < {{mailDetails.mailTo}} > </label><br>
                     <small>to me <i class="fa-solid fa-caret-down"></i></small>
                 </div>
             </div>
         </div> 
         <div class="options">
-            <small>10:23 PM(1 min ago )</small>
+            <small>{{mailDetails.dateAndTime}}</small>
             <i *ngIf="isStarred" class="fa-solid fa-star" (click)="starredMethod()" ></i>
             <i *ngIf="!isStarred" class="fa-regular fa-star" (click)="starredMethod()" ></i>
             <i class="fa-solid fa-reply" title="reply" (click)="reply()"></i>  
@@ -36,15 +36,7 @@
     </div>
     
     <div class="mail-body">
-        <pre>
-            Dear Sir 
-    
-            I am writing this mail to know about this evening
-    
-    
-            Sincerely,
-            Swamy Thudum
-        </pre>
+        <div [innerText]="mailDetails.subject" class="pre"></div>
     </div>
     <div class="buttons">
         <button (click)="reply()"> <i class="fa-solid fa-reply" title="reply" ></i> Reply</button>

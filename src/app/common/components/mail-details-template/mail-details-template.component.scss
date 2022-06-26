@@ -2,6 +2,9 @@
     height: 420px;
     overflow-y: scroll;
     margin-left: 20px;
+    header{
+        padding: 10px;
+    }
     .mail-details{
         display: flex;
         align-items: center;
@@ -89,9 +92,11 @@
         }
     }
     .mail-body{
-        pre{
+        .pre{
             font-family: roboto;
             font-size: .9em;
+            margin: 1rem 4rem;
+
         }
     }
     .buttons{

@@ -11,11 +11,23 @@
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label>Username</label><br>
-                <input type="text" placeholder="Enter username" formControlName="username">
+                <input 
+                type="text" 
+                placeholder="Enter username" 
+                formControlName="username" 
+                [ngClass]="(loginForm.get('username')?.invalid && loginForm.get('username')?.touched) ? 'invalidInputField':'' "
+                >
+                <small  *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">Please enter username</small>
             </div>
             <div class="form-group">
                 <label>Password</label><br>
-                <input type="text" placeholder="Enter username" formControlName="password">
+                <input 
+                type="text" 
+                placeholder="Enter password" 
+                formControlName="password"
+                [ngClass]="(loginForm.get('password')?.invalid && loginForm.get('password')?.touched) ? 'invalidInputField':'' "
+                >
+                <small  *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">Please enter password</small>
             </div>
             <div class="forgot">
                 <a routerLink="/user/forgot-password">forgot password ?</a>

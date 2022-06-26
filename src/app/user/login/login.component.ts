@@ -31,13 +31,23 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['inbox'])
 
     }
+    this.validationsOnSubmit(this.loginForm)
     return false;
   }
   createAccount(){
     console.log('go sign up');
-    
     this.router.navigate(['user/signup'])
 
+  }
+  validationsOnSubmit(form:any){
+    let keys=Object.keys(form.controls)
+    keys.filter(data=>{
+      let control=this.loginForm.controls[data];
+      if(control.errors!==null){
+        control.markAllAsTouched()
+      }
+
+    })
   }
 
 }

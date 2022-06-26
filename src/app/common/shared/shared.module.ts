@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 import { SharedRoutingModule } from './shared-routing.module';
 import { ToolBarComponent } from '../components/tool-bar/tool-bar.component';
@@ -7,6 +7,8 @@ import { MailDetailsTemplateComponent } from '../components/mail-details-templat
 import { MailTemplateComponent } from '../components/mail-template/mail-template.component';
 import { LabelsBarComponent } from '../components/labels-bar/labels-bar.component';
 import { ComposeMailComponent } from '../components/compose-mail/compose-mail.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -19,7 +21,10 @@ import { ComposeMailComponent } from '../components/compose-mail/compose-mail.co
   ],
   imports: [
     CommonModule,
-    SharedRoutingModule
+    SharedRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   exports:[
     ToolBarComponent,
@@ -27,6 +32,9 @@ import { ComposeMailComponent } from '../components/compose-mail/compose-mail.co
     MailDetailsTemplateComponent,
     LabelsBarComponent,
     ComposeMailComponent
+  ],
+  providers:[
+    DatePipe
   ]
 })
 export class SharedModule { }

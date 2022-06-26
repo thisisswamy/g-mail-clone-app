@@ -11,4 +11,5 @@ export class DataService {
   isUserLoggedIn=new BehaviorSubject<boolean>(false);
   isMenuOpen=new BehaviorSubject<boolean>(false);
   constructor() { }
+
 }
