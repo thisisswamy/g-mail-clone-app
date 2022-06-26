@@ -12,16 +12,7 @@
 
 <div class="mails">
     <app-labels-bar></app-labels-bar>
-    <app-mail-template></app-mail-template>
-    <app-mail-template></app-mail-template>
-    <app-mail-template></app-mail-template>
-    <app-mail-template></app-mail-template>
-    <app-mail-template></app-mail-template>
-    <app-mail-template></app-mail-template>
-    <app-mail-template></app-mail-template>
-    <app-mail-template></app-mail-template>
-    <app-mail-template></app-mail-template>
-    <app-mail-template></app-mail-template>
-    <app-mail-template></app-mail-template>
-    <app-mail-template></app-mail-template>
+    <div *ngFor="let obj of inboxList">
+        <app-mail-template [inbox]="obj"></app-mail-template>
+    </div>
 </div>

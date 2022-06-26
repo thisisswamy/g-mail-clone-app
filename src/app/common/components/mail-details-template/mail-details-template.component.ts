@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../../service/data.service';
+import { ApplicationService } from '../../service/application-service';
 
 @Component({
   selector: 'app-mail-details-template',
@@ -11,6 +12,7 @@ export class MailDetailsTemplateComponent implements OnInit {
 
   isStarred!:boolean;
   isMoreOptionsClicked!:boolean;
+  mailDetails:any;
   constructor(private readonly router:Router,private readonly dataService:DataService) { }
 
   ngOnInit(): void {
@@ -18,6 +20,7 @@ export class MailDetailsTemplateComponent implements OnInit {
     if (!previousUrl) {
       this.router.navigate(['inbox'])
     } 
+    this.getMailDetails()
   }
   starredMethod(){
     if(this.isStarred){
@@ -43,6 +46,9 @@ export class MailDetailsTemplateComponent implements OnInit {
     this.isMoreOptionsClicked=false;
 
 
+  }
+  getMailDetails(){
+    this.mailDetails=ApplicationService.get("mail")
   }
 
 }

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../../service/data.service';
+import { ApplicationService } from '../../service/application-service';
 
 @Component({
   selector: 'app-mail-template',
@@ -10,7 +11,9 @@ import { DataService } from '../../service/data.service';
 export class MailTemplateComponent implements OnInit {
 
   isStarred!:boolean;  
-  isMouseHover!:boolean;  
+  isMouseHover!:boolean; 
+  @Input()
+  inbox:any;
   constructor(
     private readonly router:Router,
     private readonly dataService:DataService
@@ -19,6 +22,8 @@ export class MailTemplateComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataService.enableCheckBox.next(false);
+    console.log(this.inbox);
+    
 
   }
   starredMsg(){
@@ -30,8 +35,9 @@ export class MailTemplateComponent implements OnInit {
     }
 
   }
-  gotoMail(){
+  gotoMail(inbox:any){
     this.dataService.enableCheckBox.next(true);
+    ApplicationService.set("mail",inbox);
     this.router.navigate(['inbox/mail-details'], { state: { prevPage: this.router.url } })
   }
 

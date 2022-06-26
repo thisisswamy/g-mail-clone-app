@@ -1,28 +1,61 @@
 <div class="wrapper">
     <div class="heading col-md-5">
         <p>Sign up</p>
-        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" #form="ngForm">
             <div class="row">
                 <div class="form-group col">
                     <label>First name</label> <br>
-                    <input type="text" placeholder="Enter first name" formControlName="firstName">
+                    <input Id
+                    type="text" 
+                    placeholder="Enter first name" 
+                    formControlName="firstName"
+                    [class.invalidInputField]="((signUpForm.get('firstName')?.invalid && signUpForm.get('firstName')?.touched) )"
+                    >
+                    <small  *ngIf="signUpForm.get('firstName')?.invalid&&signUpForm.get('firstName')?.touched ">Please enter first name</small>
                 </div> 
                 <div class="form-group col">
                     <label> Last name</label> <br>
-                    <input type="text" placeholder="Enter Last name" formControlName="lastName">
+                    <input 
+                    type="text" 
+                    placeholder="Enter Last name" 
+                    formControlName="lastName"
+                    [class.invalidInputField]="signUpForm.get('lastName')?.invalid&&signUpForm.get('lastName')?.touched"
+                    >
+                    <small  *ngIf="signUpForm.get('lastName')?.invalid&&signUpForm.get('lastName')?.touched">Please enter last name</small>
                 </div> 
             </div>
             <div class="form-group">
                 <label>E-mail</label> <br>
-                <input type="text" placeholder="Enter E-mail address" formControlName="email">
+                <input 
+                type="text" 
+                placeholder="Enter E-mail address" 
+                formControlName="emailId"
+                [class.invalidInputField]="signUpForm.get('emailId')?.invalid&&signUpForm.get('emailId')?.touched"
+                >
+                <small  *ngIf="signUpForm.get('emailId')?.errors?.required && signUpForm.get('emailId')?.touched">Please enter email address</small>
+                <small  *ngIf="signUpForm.get('emailId')?.errors?.email && signUpForm.get('emailId')?.touched">Please enter valid email address</small>
             </div> 
             <div class="form-group">
                 <label>Password</label> <br>
-                <input type="text" placeholder="Set your password" formControlName="password">
+                <input 
+                type="text" 
+                placeholder="Set your password" 
+                formControlName="password"
+                [class.invalidInputField]="signUpForm.get('password')?.invalid&&signUpForm.get('password')?.touched"
+                >
+                <small  *ngIf="signUpForm.get('password')?.errors?.required && signUpForm.get('password')?.touched">Please set your password</small>
+                <small  *ngIf="signUpForm.get('password')?.errors?.pattern &&signUpForm.get('password')?.touched">Passsword should be alphanumeric value 8 character length</small>
             </div> 
             <div class="form-group">
                 <label>Confirm password</label> <br>
-                <input type="text" placeholder="Enter Confirm password" formControlName="confirmPassword">
+                <input 
+                type="text" 
+                placeholder="Enter Confirm password" 
+                formControlName="confirmPassword"
+                [class.invalidInputField]="(signUpForm.get('confirmPassword')?.invalid||signUpForm.get('password')?.value !== signUpForm.get('confirmPassword')?.value) && signUpForm.get('confirmPassword')?.touched"
+                >
+                <small  *ngIf="signUpForm.get('confirmPassword')?.errors?.required && signUpForm.get('confirmPassword')?.touched ">Please enter confirm password</small>
+                <small  *ngIf="((signUpForm.get('password')?.value !== signUpForm.get('confirmPassword')?.value) && signUpForm.get('password')?.touched)">Password mismatch..</small>
             </div> 
             <div class="button">
                 <button>Signup</button>

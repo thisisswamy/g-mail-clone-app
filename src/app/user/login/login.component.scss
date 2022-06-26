@@ -51,6 +51,21 @@
         form{
             .form-group{
                 margin-top: 10px;
+                .invalidInputField{
+                    border: 2px solid red;
+                    background-color: #fad3d3;
+                }
+                .invalidInputField::placeholder{
+                    color: red;
+                }
+                label::after{
+                    content: "*";
+                    color: red;
+                    padding-left: 5px;
+                }
+                small{
+                    color: red;
+                }
                 input{
                     width: 100%;
                     border: 1.2px solid #ccc;
@@ -58,7 +73,9 @@
                     outline: none;
                     margin-top: 5px;
                     border-radius: 8px;
+                   
                 }
+
                 input:focus{
                     border: 1.4px solid #318CE7;
                 }
@@ -92,3 +109,4 @@
         }
     }
 }
+
