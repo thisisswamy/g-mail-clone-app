@@ -1,13 +1,13 @@
 <div class="mail">
     <header>
-        <h1>{{mailDetails.mailBody}}</h1>
+        <h1>{{mailDetails.subject}}</h1>
     </header>
     <div class="mail-details"> 
         <div class="logo-options">
             <div class="logo">
                 <i class="fa-solid fa-user"></i>
                 <div class="des">
-                    <label>{{mailDetails.mailTo}} < {{mailDetails.mailTo}} > </label><br>
+                    <label>{{mailDetails.userName}} < {{mailDetails.mailFrom}} > </label><br>
                     <small>to me <i class="fa-solid fa-caret-down"></i></small>
                 </div>
             </div>
@@ -36,7 +36,7 @@
     </div>
     
     <div class="mail-body">
-        <div [innerText]="mailDetails.subject" class="pre"></div>
+        <div [innerText]="mailDetails.mailBody" class="pre"></div>
     </div>
     <div class="buttons">
         <button (click)="reply()"> <i class="fa-solid fa-reply" title="reply" ></i> Reply</button>
