@@ -10,6 +10,7 @@ export class DataService {
   isOpenComposeMail=new BehaviorSubject<boolean>(false);
   isUserLoggedIn=new BehaviorSubject<boolean>(false);
   isMenuOpen=new BehaviorSubject<boolean>(false);
+  isMailSent=new BehaviorSubject<boolean>(false);
   constructor() { }
 
 }
