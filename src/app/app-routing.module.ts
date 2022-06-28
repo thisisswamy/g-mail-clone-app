@@ -16,6 +16,16 @@ const routes: Routes = [
     loadChildren:()=>import('./inbox/inbox.module').then(m=>m.InboxModule)
   },
   {
+    path:'sent',
+    canActivate:[AuthGuard],
+    loadChildren:()=>import('./sent/sent.module').then(m=>m.SentModule)
+  },
+  {
+    path:'starred',
+    canActivate:[AuthGuard],
+    loadChildren:()=>import('./starred/starred.module').then(m=>m.StarredModule)
+  },
+  {
     path:'**', redirectTo:'user',pathMatch:'full'
   }
   

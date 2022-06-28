@@ -12,7 +12,7 @@
 
 <div class="mails">
     <app-labels-bar></app-labels-bar>
-    <div *ngFor="let obj of inboxList">
-        <app-mail-template [mail]="obj" [folderName]="'inbox'"></app-mail-template>
+    <div *ngFor="let obj of sentList">
+        <app-mail-template [mail]="obj" [folderName]="'sent'"></app-mail-template>
     </div>
 </div>

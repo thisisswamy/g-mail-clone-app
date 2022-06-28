@@ -7,16 +7,20 @@ import { HeaderComponent } from './common/components/header/header.component';
 import { MenuComponent } from './common/components/menu/menu.component';
 import { ComposeMailComponent } from './common/components/compose-mail/compose-mail.component';
 import { AuthGuard } from './Authentication/auth.guard';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MenuComponent,
+  
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

@@ -1,11 +1,11 @@
 <header>
     <div class="logo-menu">
-        <i class="fa-solid fa-bars" title="Menu" (click)="openMenu()"></i>
+        <i class="fa-solid fa-bars" title="Menu"  (click)="openMenu()"></i>
         <img src="./assets/Images/logo.png" alt="">
     </div>
     <div class="search-bar">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Search mail">
+        <i class="fa-solid fa-magnifying-glass" (click)="searchMail()"></i>
+        <input type="text" placeholder="Search mail" [(ngModel)]="search">
         <i class="fa-solid fa-sliders"></i>
     </div>
     <div class="settings-icon">

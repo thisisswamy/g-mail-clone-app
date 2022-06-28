@@ -4,7 +4,7 @@ import { DataService } from '../../service/data.service';
 import { Router } from '@angular/router';
 import { ApplicationService } from '../../service/application-service';
 import { HttpClient } from '@angular/common/http';
-import { endPoints } from '../../../End points/endpoints';
+import { endPoints, productionEndPoints } from '../../../End points/endpoints';
 
 @Component({
   selector: 'app-tool-bar',
@@ -22,7 +22,7 @@ export class ToolBarComponent implements OnInit {
   markAsReadOptionsList:string[]=DataConstants.markAsReadOptionsList;
 
   @Input()
-  mail:any;
+  folderName:any;
   constructor(
     private readonly dataService:DataService,
     private readonly router:Router,
@@ -78,7 +78,7 @@ export class ToolBarComponent implements OnInit {
   }
   goBack(){
     this.dataService.enableCheckBox.next(false);
-    this.router.navigate(['inbox'])
+    this.router.navigate([this.folderName])
   }
   cancel(){
     this.isDeleteClicked=false;
@@ -88,9 +88,11 @@ export class ToolBarComponent implements OnInit {
     this.isDeleteClicked=false;
     const mail=ApplicationService.get('mail')
     return new Promise<void>((resolve,reject)=>{
-      this.http.delete(endPoints.deleteInboxMails+mail.id).subscribe(data=>{
+      this.http.delete(productionEndPoints.deleteMails+this.folderName+"/"+mail.id).subscribe(data=>{
         console.log("delete: ",data);
-        this.router.navigate(['inbox'])
+        this.router.navigate([this.folderName])
+        this.dataService.enableCheckBox.next(false);
+
         resolve();
       },
       err=>{
