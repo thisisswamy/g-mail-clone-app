@@ -40,3 +40,8 @@
         border-bottom: 2px solid red;
     }
 }
+@media(max-width:1020px){
+    .labels-bar{
+        display: none;
+    }
+}

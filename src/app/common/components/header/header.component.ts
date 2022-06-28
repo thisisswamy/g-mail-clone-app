@@ -10,10 +10,13 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   isLogoutClicked!:boolean;
+  search:string="";
   constructor(private readonly dataService:DataService,
     private readonly router:Router) { }
 
   ngOnInit(): void {
+   
+    
   }
   openMenu(){
     if(this.dataService.isMenuOpen.value){
@@ -38,5 +41,9 @@ export class HeaderComponent implements OnInit {
     console.log('logout...');
     
     this.router.navigate(['/user'])
+  }
+  searchMail(){
+    this.dataService.isSearchFilter.next(this.search)
+    console.log(this.search);
   }
 }

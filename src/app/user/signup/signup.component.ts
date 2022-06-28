@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/common/service/data.service';
-import { endPoints } from '../../End points/endpoints';
+import { endPoints, productionEndPoints } from '../../End points/endpoints';
 
 @Component({
   selector: 'app-signup',
@@ -64,7 +64,7 @@ export class SignupComponent implements OnInit {
   userRegistration(body: any) {
     console.log("user : ",body);
     new Promise<void>((resolve,reject)=>{
-      this.http.post(endPoints.userRegistration,body).subscribe(data=>{
+      this.http.post(productionEndPoints.userRegistration,body).subscribe(data=>{
         console.log(data);
       },
       err=>{

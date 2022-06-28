@@ -4,7 +4,7 @@ import { DataService } from '../../service/data.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
-import { endPoints } from '../../../End points/endpoints';
+import { endPoints, productionEndPoints } from '../../../End points/endpoints';
 import { Router } from '@angular/router';
 
 @Component({
@@ -56,8 +56,8 @@ export class ComposeMailComponent implements OnInit {
 
   }
   shutterDown(){
-    this.dataService.isOpenComposeMail.next(false)
-    this.dataService.isMinimised.next(false)
+    this.dataService.isOpenComposeMail.next(false);
+    this.dataService.isMinimised.next(false);
     
     
   }
@@ -66,8 +66,7 @@ export class ComposeMailComponent implements OnInit {
       const body:any=this.getBody(this.composeMail.value);
 
       return new Promise<void>((resolve,reject)=>{
-        this.http.post(endPoints.sendMails,body).subscribe(data=>{
-    
+        this.http.post(productionEndPoints.sendMails,body).subscribe(data=>{
           this.dataService.isOpenComposeMail.next(false)
           this.dataService.isMinimised.next(false)
           this.router.navigateByUrl("/").then(()=>{
