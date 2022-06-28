@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/common/service/data.service';
+import { DataService } from '../../common/service/data.service';
 import { HttpClient } from '@angular/common/http';
 import { endPoints } from '../../End points/endpoints';
 import { ApplicationService } from '../../common/service/application-service';
@@ -29,9 +29,11 @@ export class MailComponent implements OnInit {
 
   }
   getAllInboxMails(){
-    new Promise<void>((resolve,rejects)=>{
+
+   return  new Promise<void>((resolve,rejects)=>{
       this.http.get(endPoints.allInboxMails+"t@gmail.com").subscribe(data=>{
-        this.inboxList=data;  
+        this.inboxList=data;
+        this.inboxList.reverse();
       },
       err=>{
         console.log(err);

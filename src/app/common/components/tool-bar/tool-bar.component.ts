@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DataConstants } from '../../service/data-constants';
 import { DataService } from '../../service/data.service';
 import { Router } from '@angular/router';
+import { ApplicationService } from '../../service/application-service';
+import { HttpClient } from '@angular/common/http';
+import { endPoints } from '../../../End points/endpoints';
 
 @Component({
   selector: 'app-tool-bar',
@@ -14,11 +17,16 @@ export class ToolBarComponent implements OnInit {
   hasReadOptions!:boolean;
   hasMarkAsReadOptions!:boolean;
   isEnableCheckBox!:boolean;
+  isDeleteClicked!:boolean;
   readOptionsList:string[]=DataConstants.readOptionsList;
   markAsReadOptionsList:string[]=DataConstants.markAsReadOptionsList;
+
+  @Input()
+  mail:any;
   constructor(
     private readonly dataService:DataService,
-    private readonly router:Router
+    private readonly router:Router,
+    private readonly http:HttpClient
     
     
     ) { }
@@ -71,6 +79,29 @@ export class ToolBarComponent implements OnInit {
   goBack(){
     this.dataService.enableCheckBox.next(false);
     this.router.navigate(['inbox'])
+  }
+  cancel(){
+    this.isDeleteClicked=false;
+
+  }
+  delete(){
+    this.isDeleteClicked=false;
+    const mail=ApplicationService.get('mail')
+    return new Promise<void>((resolve,reject)=>{
+      this.http.delete(endPoints.deleteInboxMails+mail.id).subscribe(data=>{
+        console.log("delete: ",data);
+        this.router.navigate(['inbox'])
+        resolve();
+      },
+      err=>{
+        console.log(err);
+      });
+    })
+    
+  }
+  toDelete(){
+    this.isDeleteClicked=this.isDeleteClicked?false:true;
+
   }
 
 }

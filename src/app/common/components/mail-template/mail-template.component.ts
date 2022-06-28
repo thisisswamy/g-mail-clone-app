@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../../service/data.service';
 import { ApplicationService } from '../../service/application-service';
+import { HttpClient } from '@angular/common/http';
+import { endPoints } from '../../../End points/endpoints';
 
 @Component({
   selector: 'app-mail-template',
@@ -16,7 +18,8 @@ export class MailTemplateComponent implements OnInit {
   inbox:any;
   constructor(
     private readonly router:Router,
-    private readonly dataService:DataService
+    private readonly dataService:DataService,
+    private readonly http:HttpClient
     
     ) { }
 
@@ -27,12 +30,19 @@ export class MailTemplateComponent implements OnInit {
 
   }
   starredMsg(){
-    if(this.isStarred){
-      this.isStarred=false;
-    }
-    else{
-      this.isStarred=true;
-    }
+   this.isStarred=this.isStarred?false:true;
+   const mail=ApplicationService.get("mail")
+   return new Promise<void>((resolve,reject)=>{
+    this.http.put(`${endPoints.inboxStarredMails}${mail.id}`,null).subscribe(data=>{
+      console.log(data); 
+      resolve()
+    },
+    err=>{
+      console.log(err);
+      
+    })
+    
+   })
 
   }
   gotoMail(inbox:any){
@@ -49,16 +59,5 @@ export class MailTemplateComponent implements OnInit {
 
 
 
-
-  // onHover(){  
-  //   this.isMouseHover=true;
-  //   console.log('hover');
-    
- 
-  // }
-  // hoverOut(){
-  //   this.isMouseHover=false;
-  //   console.log('hover out');
-  // }
 
 }

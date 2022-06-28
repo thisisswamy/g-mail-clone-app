@@ -5,6 +5,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 import { endPoints } from '../../../End points/endpoints';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-compose-mail',
@@ -19,7 +20,8 @@ export class ComposeMailComponent implements OnInit {
   constructor(private readonly dataService:DataService,
     private readonly fb:FormBuilder,
     private readonly http:HttpClient,
-    private readonly datePipe:DatePipe) { }
+    private readonly datePipe:DatePipe,
+    private readonly router:Router) { }
  
 
   ngOnInit(): void {
@@ -59,22 +61,27 @@ export class ComposeMailComponent implements OnInit {
     
     
   }
-  onSubmit(){
+  onSubmit():any{
     if(this.composeMail.valid){
       const body:any=this.getBody(this.composeMail.value);
 
-      new Promise<void>((resolve,reject)=>{
+      return new Promise<void>((resolve,reject)=>{
         this.http.post(endPoints.sendMails,body).subscribe(data=>{
-          
+    
+          this.dataService.isOpenComposeMail.next(false)
+          this.dataService.isMinimised.next(false)
+          this.router.navigateByUrl("/").then(()=>{
+            this.router.navigateByUrl('inbox',{skipLocationChange:false})
+          })
+          resolve()
         },
         err=>{
           console.log(err);
           
         })
-        resolve()
+        
       })
-      this.dataService.isOpenComposeMail.next(false)
-      this.dataService.isMinimised.next(false)
+     
 
     }
 

@@ -8,7 +8,7 @@
         <i *ngIf="!isEnableCheckBox" class="fa-solid fa-arrow-rotate-right"></i>
         <i *ngIf="isChecked || isEnableCheckBox" class="fa-solid fa-square-caret-down"></i>
         <i *ngIf="isChecked || isEnableCheckBox" class="fa-solid fa-circle-exclamation"></i>
-        <i *ngIf="isChecked || isEnableCheckBox" class="fa-solid fa-trash"></i>
+        <i *ngIf="isChecked || isEnableCheckBox" class="fa-solid fa-trash" (click)="toDelete()"></i>
         <i *ngIf="isChecked || isEnableCheckBox" class="fa-solid fa-envelope-open"></i>
         <i *ngIf="isChecked || isEnableCheckBox" class="fa-solid fa-clock"></i>
         <i *ngIf="isChecked || isEnableCheckBox" class="fa-solid fa-circle-check"></i>
@@ -29,4 +29,14 @@
         <li *ngFor="let readOption of markAsReadOptionsList" (click)="selectMarkAsReadOption(readOption)" >{{readOption}}</li>
        
     </ul>
+</div>
+
+<div class="delete" *ngIf="isDeleteClicked">
+    <div class="popup">
+        <p>Are you want to delete ?</p>
+        <div class="button">
+            <button class="cancel" (click)="cancel()">Cancel</button>
+            <button class="ok-delete" (click)="delete()">Delete</button>
+        </div>
+    </div>
 </div>
