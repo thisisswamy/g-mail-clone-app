@@ -108,3 +108,56 @@
     }
 
 }
+
+.delete{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0,0.1);
+
+    .popup{
+        position: relative;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        width: 400px;
+        font-weight: 680;
+        .button{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            padding: 1rem 0rem;
+            button{
+                outline: none;
+                background-color: #fff;
+                border: none;
+                padding: 10px 40px;
+            }
+            .cancel{
+                border: 1.5px solid #318CE7;
+               
+                border-radius: 8px;
+            }
+            .cancel:hover{
+                background-color: #318CE7;
+                color: #fff;
+            }
+            .ok-delete{
+                background-color: #318CE7;
+                border-radius: 8px;
+                border: 1.5px solid #318CE7;
+                color: #fff;
+            }
+            .ok-delete:hover{
+                color: #fff;
+            }
+        }
+        
+    }
+}
