@@ -1,0 +1,85 @@
+{
+  "version": "0.0.0",
+  "name": "example",
+  "problems": [
+    "extraneous: __ngcc_entry_points__.json@ c:\\Users\\SWAMY\\OneDrive\\Desktop\\Angular\\Example\\node_modules\\__ngcc_entry_points__.json",
+    "extraneous: node-addon-api@3.2.1 c:\\Users\\SWAMY\\OneDrive\\Desktop\\Angular\\Example\\node_modules\\node-addon-api",
+    "extraneous: node-gyp-build@4.3.0 c:\\Users\\SWAMY\\OneDrive\\Desktop\\Angular\\Example\\node_modules\\node-gyp-build"
+  ],
+  "dependencies": {
+    "__ngcc_entry_points__.json": {
+      "extraneous": true,
+      "problems": [
+        "extraneous: __ngcc_entry_points__.json@ c:\\Users\\SWAMY\\OneDrive\\Desktop\\Angular\\Example\\node_modules\\__ngcc_entry_points__.json"
+      ]
+    },
+    "@angular/animations": {
+      "version": "12.2.10",
+      "resolved": "https://registry.npmjs.org/@angular/animations/-/animations-12.2.10.tgz"
+    },
+    "@angular/common": {
+      "version": "12.2.10",
+      "resolved": "https://registry.npmjs.org/@angular/common/-/common-12.2.10.tgz"
+    },
+    "@angular/compiler": {
+      "version": "12.2.10",
+      "resolved": "https://registry.npmjs.org/@angular/compiler/-/compiler-12.2.10.tgz"
+    },
+    "@angular/core": {
+      "version": "12.2.10",
+      "resolved": "https://registry.npmjs.org/@angular/core/-/core-12.2.10.tgz"
+    },
+    "@angular/forms": {
+      "version": "12.2.10",
+      "resolved": "https://registry.npmjs.org/@angular/forms/-/forms-12.2.10.tgz"
+    },
+    "@angular/platform-browser-dynamic": {
+      "version": "12.2.10",
+      "resolved": "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-12.2.10.tgz"
+    },
+    "@angular/platform-browser": {
+      "version": "12.2.10",
+      "resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-12.2.10.tgz"
+    },
+    "@angular/router": {
+      "version": "12.2.10",
+      "resolved": "https://registry.npmjs.org/@angular/router/-/router-12.2.10.tgz"
+    },
+    "express": {
+      "version": "4.18.1",
+      "resolved": "https://registry.npmjs.org/express/-/express-4.18.1.tgz"
+    },
+    "node-addon-api": {
+      "version": "3.2.1",
+      "resolved": "https://registry.npmjs.org/node-addon-api/-/node-addon-api-3.2.1.tgz",
+      "extraneous": true,
+      "problems": [
+        "extraneous: node-addon-api@3.2.1 c:\\Users\\SWAMY\\OneDrive\\Desktop\\Angular\\Example\\node_modules\\node-addon-api"
+      ]
+    },
+    "node-gyp-build": {
+      "version": "4.3.0",
+      "resolved": "https://registry.npmjs.org/node-gyp-build/-/node-gyp-build-4.3.0.tgz",
+      "extraneous": true,
+      "problems": [
+        "extraneous: node-gyp-build@4.3.0 c:\\Users\\SWAMY\\OneDrive\\Desktop\\Angular\\Example\\node_modules\\node-gyp-build"
+      ]
+    },
+    "path": {
+      "version": "0.12.7",
+      "resolved": "https://registry.npmjs.org/path/-/path-0.12.7.tgz"
+    },
+    "rxjs": {
+      "version": "6.6.7",
+      "resolved": "https://registry.npmjs.org/rxjs/-/rxjs-6.6.7.tgz"
+    },
+    "tslib": {
+      "version": "2.3.1",
+      "resolved": "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz"
+    },
+    "zone.js": {
+      "version": "0.11.4",
+      "resolved": "https://registry.npmjs.org/zone.js/-/zone.js-0.11.4.tgz"
+    }
+  }
+}
