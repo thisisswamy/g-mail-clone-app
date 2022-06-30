@@ -32,7 +32,7 @@ export class ComposeMailComponent implements OnInit {
   composeMail=this.fb.group({
     mailTo:['',[Validators.required]],
     subject:['',[Validators.required]],
-    mailBody:['',[Validators.required]],
+    mailBody:['Text should not exceed 255 characters bcuz it is beta version kindly test it with limited characters. Remove this text type your mail and send it.',[Validators.required]],
   })
   addBcc(){
     this.hasBcc = this.hasBcc ? false : true
@@ -93,6 +93,8 @@ export class ComposeMailComponent implements OnInit {
       dateAndTime:date
     }
     const body:any={...first, ...addValues};
+    console.log(body);
+    
     return body;
   }
  

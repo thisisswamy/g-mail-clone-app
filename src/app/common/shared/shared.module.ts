@@ -9,6 +9,7 @@ import { LabelsBarComponent } from '../components/labels-bar/labels-bar.componen
 import { ComposeMailComponent } from '../components/compose-mail/compose-mail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LoaderComponent } from '../components/loader/loader.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     MailTemplateComponent,
     MailDetailsTemplateComponent,
     LabelsBarComponent,
-    ComposeMailComponent
+    ComposeMailComponent,
+    LoaderComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     MailTemplateComponent,
     MailDetailsTemplateComponent,
     LabelsBarComponent,
-    ComposeMailComponent
+    ComposeMailComponent,
+    LoaderComponent
   ],
   providers:[
     DatePipe

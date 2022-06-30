@@ -1,6 +1,12 @@
 .mails{
     height: 420px;
     overflow-y: scroll;
+    .loader{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+    }
 }
 
 @media(max-width:1020px){

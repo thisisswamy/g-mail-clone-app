@@ -14,11 +14,13 @@ export class MailComponent implements OnInit {
   isMinimise!:boolean;
   isComposeMailOpened!:boolean;
   inboxList:any;
+  loader!:boolean;
 
   constructor(private readonly dataService:DataService,
     private readonly http:HttpClient) { }
 
   ngOnInit(): void {
+    this.loader=true
     this.dataService.isMinimised.subscribe(data=>{
       this.isMinimise=data;
     })
@@ -33,8 +35,7 @@ export class MailComponent implements OnInit {
       this.http.get(productionEndPoints.allInboxMails+"t@gmail.com").subscribe(data=>{
         this.inboxList=data;
         this.inboxList.reverse();
-        console.log("data : ", data);
-        console.log("url : ",productionEndPoints.allInboxMails+"t@gmail.com");
+        this.loader=false;
         
       },
       err=>{
