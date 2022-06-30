@@ -12,6 +12,9 @@
 
 <div class="mails">
     <app-labels-bar></app-labels-bar>
+    <div class="loader" *ngIf="loader">
+        <app-loader ></app-loader>
+    </div>
     <div *ngFor="let obj of sentList">
         <app-mail-template [mail]="obj" [folderName]="'sent'"></app-mail-template>
     </div>

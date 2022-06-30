@@ -13,11 +13,13 @@ export class StarredMailComponent implements OnInit {
   isMinimise!:boolean;
   isComposeMailOpened!:boolean;
   starredList:any;
+  loader!:boolean;
 
   constructor(private readonly dataService:DataService,
     private readonly http:HttpClient) { }
 
   ngOnInit(): void {
+    this.loader=true;
     this.dataService.isMinimised.subscribe(data=>{
       this.isMinimise=data;
     })
@@ -32,6 +34,7 @@ export class StarredMailComponent implements OnInit {
       this.http.get(productionEndPoints.allStarredMails+"t@gmail.com").subscribe(data=>{
         this.starredList=data;
         this.starredList.reverse();
+        this.loader=false;
       },
       err=>{
         console.log(err);

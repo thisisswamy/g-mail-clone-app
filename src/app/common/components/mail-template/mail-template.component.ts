@@ -32,19 +32,14 @@ export class MailTemplateComponent implements OnInit {
     this.dataService.isSearchFilter.subscribe(data=>{
       this.searchFilter=data;
       console.log(this.searchFilter);
-    
     })
-   
     console.log(this.mail);
     
-
   }
   starredMsg(){
    this.isStarred=this.isStarred?false:true;
-   const mail=ApplicationService.get("mail")
    return new Promise<void>((resolve,reject)=>{
-    this.http.put(`${productionEndPoints.starredMails}${this.folderName}/${mail.id}`,null).subscribe(data=>{
-      console.log(data); 
+    this.http.put(`${productionEndPoints.starredMails}${this.folderName}/${this.mail.id}`,null).subscribe(data=>{
       resolve()
     },
     err=>{
@@ -58,14 +53,5 @@ export class MailTemplateComponent implements OnInit {
     ApplicationService.set("mail",mail);
     this.router.navigate([`${this.folderName}/mail-details`], { state: { prevPage: this.router.url } })
   }
-
-
-
-
-
-
-
-
-
 
 }

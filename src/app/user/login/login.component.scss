@@ -15,7 +15,7 @@
     .logo{
         color: #fff;
         border-radius: 0px;
-        padding: 80px 30px;
+        padding:20px;
         background-color: #002D62;
         box-shadow: 0 0 10px 0 #318CE7;
 
@@ -81,6 +81,11 @@
                 }
             }
             .forgot{
+                padding-top: 10px;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
                 a{
                     text-decoration: none;
                     font-size: .8em;
